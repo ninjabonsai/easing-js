@@ -1,6 +1,6 @@
 {
     "name": "es6-easing",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Robert Penner's easing equations as an ES6 module",
     "repository": "ninjabonsai/es6-easing",
     "main": "lib/index.js",
