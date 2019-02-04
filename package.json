@@ -1,13 +1,37 @@
 {
-    "name": "easing-js"
-  , "description": "Generic set of easing functions with AMD support"
-  , "version": "0.5.4"
-  , "homepage": "https://github.com/danro/easing-js"
-  , "author": "Dan Rogers <dan@danro.net>"
-  , "keywords": ["animation", "easing", "tween"]
-  , "main": "./easing.js"
-  , "repository": {
-      "type": "git"
-    , "url": "https://github.com/danro/easing-js.git"
-  }
+    "name": "es6-easing",
+    "version": "1.0.0",
+    "description": "Robert Penner's easing equations as an ES6 module",
+    "repository": "ninjabonsai/es6-easing",
+    "main": "lib/index.js",
+    "unpkg": "dist/index.js",
+    "scripts": {
+        "build": "babel src/index.js -o lib/index.js",
+        "umd-build": "rollup src/index.js --file dist/index.js --format umd --name 'ES6Easing'",
+        "prepublish": "npm run build && npm run umd-build"
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env"
+        ]
+    },
+    "files": [
+        "lib/",
+        "dist/"
+    ],
+    "keywords": [
+        "easing",
+        "equations",
+        "es6"
+    ],
+    "author": "Richard Rogers",
+    "license": "BSD",
+    "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.3.1",
+        "eslint": "^5.12.1",
+        "rollup": "^1.1.2"
+    },
+    "dependencies": {}
 }
