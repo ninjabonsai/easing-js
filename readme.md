@@ -7,7 +7,7 @@ npm install es6-easing
 ```
 Then import the easing function you need...
 ```javascript
-import { easeOutSine } from 'es6-easing';
+import { easeInQuadOutQuint } from 'es6-easing';
 ```
 ### Easing functions
 easeInQuad  
@@ -44,3 +44,8 @@ bouncePast
 easeFromTo  
 easeFrom  
 easeTo  
+
+### Extra Easing function
+these 2 extras are a mix to give a stronger ease out than in  
+easeInQuadOutQuint
+easeInQuadOutExpo

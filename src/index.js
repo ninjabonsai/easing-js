@@ -175,6 +175,29 @@ const easingFunctions = {
     easeTo( pos ) {
         return Math.pow( pos,0.25 );
     },
+    
+    easeInQuadOutQuint( pos ) {
+        // InOutQuad
+        if ( ( pos /= 0.5 ) < 1 ) return 0.5 * Math.pow( pos,2 );
+        // return -0.5 * ( ( pos -= 2 ) * pos - 2 );
+        
+        // InOutQuint
+        // if ( ( pos /= 0.5 ) < 1 ) return 0.5 * Math.pow( pos,5 );
+        return 0.5 * ( Math.pow( ( pos - 2 ),5 ) + 2 );
+    },
+    
+    easeInQuadOutExpo( pos ) {
+        if( pos === 0 ) return 0;
+        if( pos === 1 ) return 1;
+        
+        // InOutQuad
+        if ( ( pos /= 0.5 ) < 1 ) return 0.5 * Math.pow( pos,2 );
+        // return -0.5 * ( ( pos -= 2 ) * pos - 2 );
+        
+        // InOutExpo
+        // if( ( pos /= 0.5 ) < 1 ) return 0.5 * Math.pow( 2,10 * ( pos - 1 ) );
+        return 0.5 * ( -Math.pow( 2, -10 * --pos ) + 2 );
+    },
 };
 
 export const {
@@ -211,5 +234,7 @@ export const {
     bouncePast,
     easeFromTo,
     easeFrom,
-    easeTo
+    easeTo,
+    easeInQuadOutQuint,
+    easeInQuadOutExpo
 } = easingFunctions;
